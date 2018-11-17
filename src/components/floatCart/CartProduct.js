@@ -6,23 +6,19 @@ import util from '../../util';
 
 
 class CartProduct extends Component {
-
   state = {
     isMouseOver: false,
   }
-
+  // Declear 2 methods of what happened when mouse hovering
   handleMouseOver = () => {
     this.setState({isMouseOver: true});
   }
-
   handleMouseOut = () => {
     this.setState({isMouseOver: false});
   }
 
-
   render(){
     const { product, removeProduct } = this.props;
-
     const classes = ['shelf-item'];
 
     if(!!this.state.isMouseOver){
