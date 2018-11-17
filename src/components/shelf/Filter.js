@@ -25,10 +25,9 @@ class Filter extends Component {
   toggleCheckbox = (label) => {
     if (this.selectedCheckboxes.has(label)) {
       this.selectedCheckboxes.delete(label);
-  } else {
+    } else {
       this.selectedCheckboxes.add(label);
     }
-
     this.props.updateFilters(Array.from(this.selectedCheckboxes));
   }
 
