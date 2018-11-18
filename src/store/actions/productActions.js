@@ -2,7 +2,7 @@ import { FETCH_PRODUCTS } from './types';
 import axios from 'axios';
 
 const productsAPI = "https://react-shopping-cart-67954.firebaseio.com/products.json";
-/* const productsAPI = "http://localhost:8001/api/products"; */
+//const productsAPI = "http://localhost:8001/api/products"; 
 
 const compare = {
   'lowestprice': (a, b) => {
