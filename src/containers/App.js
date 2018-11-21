@@ -17,10 +17,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <Corner />
           <main>
             <Shelf />
           </main>
+          <Corner />
           <Footer />
           <FloatCart />
         </div>

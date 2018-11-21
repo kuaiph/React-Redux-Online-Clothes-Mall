@@ -15,6 +15,7 @@ export default function(state = initialState, action) {
     case ADD_PRODUCT:
       return {
         ...state,
+        // Hard copy the payload into a new obj
         item: Object.assign({}, action.payload)
       };
     case REMOVE_PRODUCT:
