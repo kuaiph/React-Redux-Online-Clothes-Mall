@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { updateFilters } from '../../store/actions/filterActions';
 import Checkbox from '../Checkbox';
-// import StarButton from '../github/StarButton';
 
+// This .js works with Checkbox.js to filter the size of clothes.
 const availableSizes = [
   'XS',
   'S',
@@ -14,10 +14,10 @@ const availableSizes = [
   'L',
   'XL',
   'XXL',
+  'XXXL'
 ];
 
 class Filter extends Component {
-
   componentWillMount() {
     this.selectedCheckboxes = new Set();
   }
@@ -49,19 +49,28 @@ class Filter extends Component {
       <div className="filters">
         <h4 className="title">Sizes:</h4>
         {this.createCheckboxes()}
-        {/* <StarButton /> */}
       </div>
     );
   }
 }
 
 Filter.propTypes = {
+  // updateFilters is a function and this is required!
   updateFilters: PropTypes.func.isRequired,
+  // filters is an array.
   filters: PropTypes.array,
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   filters: state.filters.items,
 })
 
-export default connect(mapStateToProps, { updateFilters })(Filter);
+// Filter is a UI component
+export default connect(
+  // mapStateToProps used for convert state into own props
+  /* 
+    updateFilters is the actions written in ../../store/actions/filterActions
+    connect conbine this action with Filter's props
+  */  
+  mapStateToProps, { updateFilters }
+  )(Filter);

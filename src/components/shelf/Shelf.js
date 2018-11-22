@@ -13,7 +13,7 @@ import Spinner from '../Spinner';
 
 
 class Shelf extends Component {
-  state  = {
+  state = {
     loading: false,
   }
 
@@ -48,22 +48,22 @@ class Shelf extends Component {
     const p = products.map(p => {
       return (
         <Product
-          product={p}
-          addProduct={this.props.addProduct}
-          key={p.id}
+          product = { p }
+          addProduct = { this.props.addProduct }
+          key = { p.id }
         />
       );
     });
 
     return (
       <React.Fragment>
-        {this.state.loading &&
+        { this.state.loading &&
           <Spinner />
         }
         <Filter />  
         <div className="shelf-container">
-          <ShelfHeader productsLength={products.length}/>
-          {p}
+          <ShelfHeader productsLength = { products.length }/>
+          { p }
           <Clearfix />
         </div>
         <Clearfix />

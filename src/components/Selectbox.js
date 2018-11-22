@@ -7,8 +7,7 @@ class Selectbox extends Component {
     selected: '',
   }
   
-  // Create each obj value and label
-  // TODOOOOO
+  // This is used for SORT select box fn (hi -> lo or lo -> hi), right top of the pages.
   createOptions = (options) => options.map( 
     o => <option value = { o.value } key = { o.value }>{ o.label } </option> );
   onChange = (e) => {

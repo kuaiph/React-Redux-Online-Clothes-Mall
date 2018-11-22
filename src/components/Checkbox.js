@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
+// This is left-top FILTER of SIZE
+// Combine work with Filter.js
 class Checkbox extends Component {
   state = {
     isChecked: false,
@@ -8,10 +10,10 @@ class Checkbox extends Component {
 
   toggleCheckboxChange = () => {
     const { handleCheckboxChange, label } = this.props;
-    this.setState(({ isChecked }) => (
-      {
+    this.setState(({ isChecked }) => ({
+      // Looks tricky? No.
         isChecked: !isChecked,
-      }
+    }
     ));
     handleCheckboxChange(label);
   }
