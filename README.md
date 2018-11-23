@@ -1,12 +1,12 @@
-## React & Redux Online Mall App
+## React & Redux Online Clothes Mall App
 
 #### Features
-- Add and remove products from the floating cart
-- Sort products by highest to lowest and lowest to highest price
-- Filter products by available sizes
+- Add and remove products from cart
+- Sort products: hi -> lo, lo -> hi
+- Filter products by sizes
+- Show free shipping labels
 - Products persist in floating cart even after page reloads
 - Responsive design for desktop, tablets and mobile
-- Product stoppers for free shipping
 
 #### Using
 - React
