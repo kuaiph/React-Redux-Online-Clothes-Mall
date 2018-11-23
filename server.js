@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-const port = 8001;
+const port = 8123;
 
 app.get('/api/products', (req, res) => {
     res.sendFile(path.join(__dirname, 'data', 'products.json'));
