@@ -50,7 +50,7 @@ const Product = (props) => {
         </div>
         { productInstallment }
       </div>
-      <div onClick = { () => props.addProduct(product) } className = "shelf-item__buy-btn">Add to cart</div>
+      <div onClick = { () => props.addProduct(product) } className = "shelf-item__buy-btn">Add it!</div>
     </div>
   );
 }

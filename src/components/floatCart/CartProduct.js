@@ -11,10 +11,10 @@ class CartProduct extends Component {
   }
   // Declear 2 methods of what happened when mouse hovering
   handleMouseOver = () => {
-    this.setState({isMouseOver: true});
+    this.setState({ isMouseOver: true });
   }
   handleMouseOut = () => {
-    this.setState({isMouseOver: false});
+    this.setState({ isMouseOver: false });
   }
 
   render(){
@@ -35,7 +35,7 @@ class CartProduct extends Component {
         />
         <Thumb
           classes = "shelf-item__thumb"
-          src = { require(`../../static/products/${product.sku}_2.jpg`) }
+          src = { require(`../../static/products/${product.sku}_1.jpg`) }
           alt = { product.title }
         />
         <div className = "shelf-item__details">
