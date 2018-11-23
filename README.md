@@ -11,36 +11,33 @@
 #### Using
 - React
   * Redux - for application state management
-- Nodejs
-  * Express CORS Middleware
-  * Nodemon - for watching for server changes
-- Axios - for promise HTTP requests
-- Native local storage API - for product persistence in floating cart
 - CSS
   * BEM methodology
   * SASS
+- Nodejs
+  * Express CORS Middleware
+  * Nodemon - for watching for server changes
+- Axios
+  * for promise HTTP requests
+- Native local storage API
+  * for product persistence in floating cart
+
 
 ## Getting started
-
 ``` bash
 npm install
 ```
-
 ### Run the API Server
 
 ``` bash
 npm run server
 ```
-
 ### Start the React App
 
 ``` bash
 npm start
 ```
-
 The application will start automatically in your browser on `http://localhost:3000`
 
-<br/>
-
 ### Todo
-- [ ] Implement filters by URL params using react-router
+Filters by URL params using react-router
