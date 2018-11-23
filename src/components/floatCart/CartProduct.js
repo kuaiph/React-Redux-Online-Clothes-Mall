@@ -26,30 +26,30 @@ class CartProduct extends Component {
     }
 
     return (
-      <div className={classes.join(' ')}>
+      <div className = { classes.join(' ') }>
         <div
-          className="shelf-item__del"
-          onMouseOver={() => this.handleMouseOver()}
-          onMouseOut={() => this.handleMouseOut()}
-          onClick={() => removeProduct(product)}
+          className = "shelf-item__del"
+          onMouseOver = { () => this.handleMouseOver() }
+          onMouseOut = { () => this.handleMouseOut() }
+          onClick = { () => removeProduct(product) }
         />
         <Thumb
-          classes="shelf-item__thumb"
-          src={require(`../../static/products/${product.sku}_2.jpg`)}
-          alt={product.title}
+          classes = "shelf-item__thumb"
+          src = { require(`../../static/products/${product.sku}_2.jpg`) }
+          alt = { product.title }
         />
-        <div className="shelf-item__details">
-          <p className="title">{product.title}</p>
-          <p className="desc">
-            {`${product.availableSizes[0]} | ${product.style}`} <br />
-            Quantity: {product.quantity}
+        <div className = "shelf-item__details">
+          <p className = "title">{ product.title }</p>
+          <p className = "desc">
+            { `${ product.availableSizes[0] } | ${product.style}` } <br />
+            Quantity: { product.quantity }
           </p>
         </div>
-        <div className="shelf-item__price">
-          <p>{`${product.currencyFormat}  ${util.formatPrice(product.price)}`}</p>
+        <div className = "shelf-item__price">
+          <p>{ `${ product.currencyFormat }  ${ util.formatPrice(product.price) }` }</p>
         </div>
 
-        <div className="clearfix" />
+        <div className = "clearfix" />
       </div>
     );
   }

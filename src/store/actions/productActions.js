@@ -1,6 +1,10 @@
 import { FETCH_PRODUCTS } from './types';
 import axios from 'axios';
 
+// Get all Product Data!!!!!
+// Get all Product Data!!!!!
+// Get all Product Data!!!!!
+
 const productsAPI = "https://react-shopping-cart-67954.firebaseio.com/products.json";
 //const productsAPI = "http://localhost:8001/api/products"; 
 
@@ -26,15 +30,15 @@ export const fetchProducts = (filters, sortBy, callback) => dispatch => {
     .then(res => {
       let { products } = res.data;
 
-      if(!!filters && filters.length > 0){
+      if (!!filters && filters.length > 0){
         products = products.filter( p => filters.find( f => p.availableSizes.find( size => size === f ) ) )
       }
 
-      if(!!sortBy){
+      if (!!sortBy){
         products = products.sort(compare[sortBy]);
       }
 
-      if(!!callback) {
+      if (!!callback) {
         callback();
       }
 
@@ -42,10 +46,9 @@ export const fetchProducts = (filters, sortBy, callback) => dispatch => {
         type: FETCH_PRODUCTS,
         payload: products
       });
-
     })
     .catch(err => {
       console.log(err);
-      throw new Error('Could not fetch products. Try again later.');
+      throw new Error('Retrive products data failed. Check API in productActions.js');
     });
 }

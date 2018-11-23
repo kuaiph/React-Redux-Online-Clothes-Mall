@@ -5,7 +5,8 @@ import Thumb from '../Thumb';
 import util from '../../util';
 
 
-// This is the product display component.
+// This is the product display component, integrated by shelf.js.
+
 const Product = (props) => {
   const product = props.product;
 
@@ -20,25 +21,26 @@ const Product = (props) => {
     const installmentPrice = (product.price / product.installments);
 
     productInstallment = (
-      <div className="installment">
+      <div className = "installment">
         <span>or { product.installments } x</span><b> { product.currencyFormat } { util.formatPrice(installmentPrice, product.currencyId) }</b>
       </div>
     );
   }
 
   return (
-    <div className="shelf-item" data-sku = { product.sku }>
+    <div className = "shelf-item" data-sku = { product.sku }>
       { product.isFreeShipping && 
-        <div className="shelf-stopper">Now ship free</div>
+        <div className = "shelf-stopper">Free Shipping</div>
       }
       <Thumb
-        classes="shelf-item__thumb"
-        src = { require(`../../static/products/${product.sku}_1.jpg`) }
+        classes = "shelf-item__thumb"
+        // Why need a $? For escape code.
+        src = { require(`../../static/products/${ product.sku }_1.jpg`) }
         alt = { product.title }
       />
-      <p className="shelf-item__title"> { product.title }</p>
-      <div className="shelf-item__price">
-        <div className="val"><small>{ product.currencyFormat }</small>
+      <p className = "shelf-item__title"> { product.title }</p>
+      <div className = "shelf-item__price">
+        <div className = "val"><small>{ product.currencyFormat }</small>
           <b>
             { formattedPrice.substr(0, formattedPrice.length - 3) }
           </b>
@@ -48,7 +50,7 @@ const Product = (props) => {
         </div>
         { productInstallment }
       </div>
-      <div onClick = { () => props.addProduct(product) } className="shelf-item__buy-btn">Add to cart</div>
+      <div onClick = { () => props.addProduct(product) } className = "shelf-item__buy-btn">Add to cart</div>
     </div>
   );
 }

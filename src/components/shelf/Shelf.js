@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+// Used for fetch product data
 import { fetchProducts } from '../../store/actions/productActions';
 import { addProduct } from '../../store/actions/floatCartActions';
 
