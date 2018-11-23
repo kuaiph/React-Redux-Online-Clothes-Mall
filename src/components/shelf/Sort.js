@@ -7,8 +7,8 @@ import Selectbox from '../Selectbox';
 
 const sortBy = [
   { value: '',           label: 'Select'  },
-  { value: 'lowestprice', label: 'Lowest to highest' },
-  { value: 'highestprice', label: 'Highest to lowest' },
+  { value: 'lowestprice', label: 'Low -> high' },
+  { value: 'highestprice', label: 'High -> low' },
 ]
 
 class Sort extends Component {
@@ -20,7 +20,7 @@ class Sort extends Component {
   render() {
     return (
       <div className="sort">
-        Order by <Selectbox options={sortBy} handleOnChange={this.handleSort} />
+        Order by <Selectbox options = { sortBy } handleOnChange = { this.handleSort } />
       </div>
     );
   }
@@ -31,8 +31,10 @@ Sort.propTypes = {
   sort: PropTypes.string.isRequired,
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   sort: state.sort.item,
 })
 
-export default connect(mapStateToProps, { updateSort })(Sort);
+export default connect(
+  mapStateToProps, { updateSort }
+)(Sort);

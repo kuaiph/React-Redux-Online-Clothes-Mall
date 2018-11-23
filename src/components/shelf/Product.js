@@ -5,6 +5,7 @@ import Thumb from '../Thumb';
 import util from '../../util';
 
 
+// This is the product display component.
 const Product = (props) => {
   const product = props.product;
 

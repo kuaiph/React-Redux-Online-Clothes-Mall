@@ -12,24 +12,27 @@ import Clearfix from '../Clearfix';
 import Spinner from '../Spinner';
 
 
+// This is an integration of all sub component.
 class Shelf extends Component {
   state = {
     loading: false,
   }
 
+  // componentWillMount: components loaded, before render(), exec only once
   componentWillMount() {
     const { filters, sort } = this.props;
 
     this.handleFetchProducts(filters, sort);
   }
-
+  // when receive a new prop, exec it. Init render() no exec.
   componentWillReceiveProps(nextProps) {
     const { filters: nextFilters, sort: nextSort } = nextProps;
 
+    // If change filter setting (Left-top)
     if (nextFilters !== this.props.filters) {
       this.handleFetchProducts(nextFilters, undefined);
     }
-
+    // If change sort setting (Right-top)
     if (nextSort !== this.props.sort) {
       this.handleFetchProducts( undefined, nextSort);
     }
@@ -56,20 +59,28 @@ class Shelf extends Component {
     });
 
     return (
+      /*
+      Fragments 可以让你聚合一个子元素列表，并且不在DOM中增加额外节点。
+        <React.Fragment>
+          <ChildA />
+          <ChildB />
+          <ChildC />
+        </React.Fragment> 
+      */
       <React.Fragment>
+        <Filter /> 
         { this.state.loading &&
           <Spinner />
         }
-        <Filter />  
+         
         <div className="shelf-container">
           <ShelfHeader productsLength = { products.length }/>
           { p }
-          <Clearfix />
+          {/* <Clearfix /> */}
         </div>
         <Clearfix />
       </React.Fragment>
     )
-
   }
 }
 
@@ -87,4 +98,6 @@ const mapStateToProps = state => ({
   sort: state.sort.item,
 })
 
-export default connect(mapStateToProps, { fetchProducts, addProduct })(Shelf);
+export default connect(
+  mapStateToProps, { fetchProducts, addProduct }
+)(Shelf);
