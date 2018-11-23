@@ -89,7 +89,7 @@ class FloatCart extends Component {
         <CartProduct
           product = { p }
           removeProduct = { removeProduct }
-          ke y= { p.id }
+          key= { p.id }
         />
       );
     });
