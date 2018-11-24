@@ -1,6 +1,6 @@
 # React & Redux Online Clothes Mall
 
-### Using
+### Ingredient
 - React
 - React-Redux
 - CSS
@@ -14,7 +14,7 @@
 - Native local storage API
   * for product persistence in floating cart
 
-### Features
+### Func
 - Add and remove products.
 - Sort products by prices.
 - Filter products by sizes
@@ -22,15 +22,15 @@
 - Products data persistent for shopping cart.
 - Responsive design for desktop, PC and mobile.
 
-## Getting started
+## Get started
 ``` bash
 npm install
 ```
-### Run the API Server
+### Run data API Server
 ``` bash
 npm run server
 ```
-### Start the React App
+### Start App
 ``` bash
 npm start
 ```
