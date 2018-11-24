@@ -14,9 +14,7 @@ class FloatCart extends Component {
   state = {
     isOpen: false,
   };
-/*
 
-*/
   componentWillMount() {
     // This will be executed befor DOM. Client and Server.
     this.props.loadCart( JSON.parse(persistentCart().get()) || [] );
@@ -34,7 +32,7 @@ class FloatCart extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // Called when components recieve a new prop.
+    // Called when components recieve a new prop prop prop.
     // This method will not be called when init render().
     if (nextProps.newProduct !== this.props.newProduct) {
       this.addProduct(nextProps.newProduct);
@@ -88,7 +86,7 @@ class FloatCart extends Component {
     if (!productQuantity) {
       alert("Come on! Add some cool gadges");
     }else {
-      alert(`Checkout - Subtotal: ${ currencyFormat } ${ util.formatPrice(totalPrice, currencyId) } \nThank you for your shopping! Hope to see you agagin!`);
+      alert(`Checkout - Subtotal: ${ currencyFormat } ${ util.formatPrice(totalPrice, currencyId) } \nThank you for your shopping! Hope to see you again!`);
     }
   }
 
@@ -114,7 +112,7 @@ class FloatCart extends Component {
     return (
       <div className = { classes.join(' ') }>
         {/* If cart open, show close (x) button */}
-        {this.state.isOpen && (
+        { this.state.isOpen && (
           <div
             onClick = { () => this.closeFloatCart() }
             className = "float-cart__close-btn"
@@ -185,12 +183,25 @@ FloatCart.propTypes = {
   productToRemove: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
+
+const mapStateToProps = (state) => ({
   cartProducts: state.cartProducts.items,
   newProduct: state.cartProducts.item,
   productToRemove: state.cartProducts.itemToRemove,
   cartTotals: state.cartTotals.item,
 });
 
-export default connect(mapStateToProps, { loadCart, updateCart, removeProduct})(FloatCart);
+// mapStateToProps allows us to bind states in store with the prop of component.
+// mapDispatchToProps allows us to bind actions to ownComp's prop
+
+// redux: 代理top-level single data flow，从最外层的container下发数据流触发dumb components的更新。
+// 当 state 变化，或者 ownProps 变化的时候，mapStateToProps 都会被调用，计算出一个新的 stateProps，（在与 ownProps merge 后）更新给 MyComp。
+
+// All states are decleared in 'actions'.
+// You may confused about the state declearation at the beginning this class, isOpen = false;
+// We only use it in ownComp, not redux
+
+export default connect(
+  mapStateToProps, { loadCart, updateCart, removeProduct }
+)(FloatCart);
 
