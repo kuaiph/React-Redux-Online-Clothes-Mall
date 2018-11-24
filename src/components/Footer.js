@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Clock from './Clock';
 
 const Footer = () => (
   <footer>
@@ -9,6 +9,9 @@ const Footer = () => (
     </div>
     <div>
       <a href = "https://www.linkedin.com/in/yiming-yan-a6640111a/" rel = "noopener noreferrer" target = "_blank" title = "Linkedin Profile">Click LinkedIn: Yiming Yan</a>
+    </div>
+    <div>
+      <Clock />
     </div>
   </footer>
 );

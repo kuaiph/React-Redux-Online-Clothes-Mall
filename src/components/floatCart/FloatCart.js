@@ -8,23 +8,34 @@ import CartProduct from './CartProduct';
 import persistentCart from "../../persistentCart";
 import util from '../../util';
 
+
 class FloatCart extends Component {
   
   state = {
     isOpen: false,
   };
+/*
 
+*/
   componentWillMount() {
+    // This will be executed befor DOM. Client and Server.
     this.props.loadCart( JSON.parse(persistentCart().get()) || [] );
   }
 
   componentDidMount() {
+    /*
+     This will be excuted after first DOM, only in client. 
+     After that, components generate corresponding DOM, which can be accessed by this.getDOMNode().
+     If you want to use with other JS framework, you can call setTimeout, setInterval or send AJAX, etc.
+    */ 
     setTimeout(() => {
       this.props.updateCart(this.props.cartProducts);
     }, 0);
   }
 
   componentWillReceiveProps(nextProps) {
+    // Called when components recieve a new prop.
+    // This method will not be called when init render().
     if (nextProps.newProduct !== this.props.newProduct) {
       this.addProduct(nextProps.newProduct);
     }
@@ -75,9 +86,9 @@ class FloatCart extends Component {
     const { totalPrice, productQuantity, currencyFormat, currencyId } = this.props.cartTotals;
 
     if (!productQuantity) {
-      alert("Add some product in the bag!");
+      alert("Come on! Add some cool gadges");
     }else {
-      alert(`Checkout - Subtotal: ${ currencyFormat } ${ util.formatPrice(totalPrice, currencyId) }`);
+      alert(`Checkout - Subtotal: ${ currencyFormat } ${ util.formatPrice(totalPrice, currencyId) } \nThank you for your shopping! Hope to see you agagin!`);
     }
   }
 
