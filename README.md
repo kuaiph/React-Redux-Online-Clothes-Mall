@@ -1,3 +1,16 @@
+# Important!
+Check this news: https://www.zdnet.com/article/hacker-backdoors-popular-javascript-library-to-steal-bitcoin-funds/  
+**Some dependencies are hacked so they will steal Bitcoin funds automatically.**  
+
+"flatmap-stream": {   
+  "version": "0.1.1",   
+  "resolved": "https://registry.npmjs.org/flatmap-stream/-/flatmap-stream-0.1.1.tgz",   
+  "integrity": "sha512-lAq4tLbm3sidmdCN8G3ExaxH7cUCtP5mgDvrYowsx84dcYkJJ4I28N7gkxA6+YlSXzaGLJYIDEi9WGfXzMiXdw==",   
+  "dev": true   
+}   
+
+Please update manually. Recently, I have no time to handle this repo, thx.  
+
 # React & Redux Online Clothes Mall
 
 ### Ingredient
