@@ -1,6 +1,6 @@
-# (Depreciated)Important!
+# (Depreciated) Important!
 Check this news: https://www.zdnet.com/article/hacker-backdoors-popular-javascript-library-to-steal-bitcoin-funds/  
-**Some dependencies are hacked so they will steal Bitcoin funds automatically.**  
+**Some dependencies are hacked so they will steal Bitcoin funds.**  
 
 "flatmap-stream": {   
   "version": "0.1.1",   
@@ -8,11 +8,11 @@ Check this news: https://www.zdnet.com/article/hacker-backdoors-popular-javascri
   "integrity": "sha512-lAq4tLbm3sidmdCN8G3ExaxH7cUCtP5mgDvrYowsx84dcYkJJ4I28N7gkxA6+YlSXzaGLJYIDEi9WGfXzMiXdw==",   
   "dev": true   
 }   
-I have update the bug dependency.  
+I have update the related tool.  
 
 # React & Redux Online Clothes Mall
 
-### Ingredient
+### Ingredients
 - React
 - React-Redux
 - CSS
@@ -26,13 +26,14 @@ I have update the bug dependency.
 - Native local storage API
   * for product persistence in floating cart
 
-### Func
+### Functions
 - Add and remove products.
 - Sort products by prices.
 - Filter products by sizes
 - Show free shipping labels
 - Products data persistent for shopping cart.
 - Responsive design for desktop, PC and mobile.
+- Easter egg: See where am I.  
 
 ## Get started
 ``` bash
