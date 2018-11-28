@@ -1,5 +1,7 @@
 import React from 'react';
 import Clock from './Clock';
+import GoogleMap from './GoogleMap';
+
 
 const Footer = () => (
   <footer>
@@ -12,6 +14,10 @@ const Footer = () => (
     </div>
     <div>
       <Clock />
+      <div style = { { width: '100%', height: '600px' } }>
+      <p align='center'>I am studying here. ↓</p>
+        <GoogleMap />
+      </div>
     </div>
   </footer>
 );
